@@ -20,8 +20,15 @@ let reverseRecursively
 
 // Iterative Solution
 reverseIteratively = (head) => {
-  // write your code HERE
-
+  let p = null;
+  let c = head;
+  let n = c.next;
+  while (c) {
+    c.next = p;
+    p = c;
+    c = n;
+    if (c) n = n.next;
+  }
 }
 
 // (Extra!) Recursive Solution   
